@@ -1,5 +1,6 @@
 using HDF5, JLD
 using Distributions
+using Random
 
 export runStochasticGradientHamiltonianMonteCarloSampler,
        doDPPBayesianLearningSparseVectorData
@@ -221,7 +222,8 @@ function doDPPBayesianLearningSparseVectorData(trainingBasketsDictFileName,
   testBasketsDictObjectName, learnedModelOutputDirName, numItemTraits,
   runSamplerFunction::Function, initialItemTraitMatrxFileName = -1,
   initialItemTraitMatrxObjectName = -1)
-  srand(1234)
+  # srand(1234)
+  Random.seed!(1234)
 
   # Load training data
   trainingBasketsDict = load(trainingBasketsDictFileName,
