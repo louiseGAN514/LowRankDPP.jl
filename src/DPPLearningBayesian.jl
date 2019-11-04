@@ -226,13 +226,17 @@ function doDPPBayesianLearningSparseVectorData(trainingBasketsDictFileName,
   Random.seed!(1234)
 
   # Load training data
-  trainingBasketsDict = load(trainingBasketsDictFileName,
+  # trainingBasketsDict = load(trainingBasketsDictFileName,
                                   trainingBasketsDictObjectName)
+  # println("Loaded $trainingBasketsDictFileName")
+  trainingBasketsDict = open(deserialize, trainingBasketsDictFileName);
   println("Loaded $trainingBasketsDictFileName")
 
   # Load test data
-  testBasketsDict = load(testBasketsDictFileName,
+  # testBasketsDict = load(testBasketsDictFileName,
                               testBasketsDictObjectName)
+  # println("Loaded $testBasketsDictFileName")
+  testBasketsDict = open(deserialize, testBasketsDictFileName);
   println("Loaded $testBasketsDictFileName")
 
   # Build set of training instances
