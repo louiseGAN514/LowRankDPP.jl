@@ -34,9 +34,9 @@ end
 
 # An example of using stochastic gradient HMC for DPP learning
 function dppLearningBayesianExample()
-  trainingBasketsDictFileName = "$dataDir/apparel-regs-training-basketsDict.jld"
+  trainingBasketsDictFileName = "$dataDir/apparel-regs-training-basketsDict.jls"
   trainingBasketsDictObjectName = "trainingBasketsDict"
-  testBasketsDictFileName = "$dataDir/apparel-regs-test-basketsDict.jld"
+  testBasketsDictFileName = "$dataDir/apparel-regs-test-basketsDict.jls"
   testBasketsDictObjectName = "testBasketsDict"
   learnedModelOutputDirName = "example-SGHMC-model"
   numItemTraits = 30
