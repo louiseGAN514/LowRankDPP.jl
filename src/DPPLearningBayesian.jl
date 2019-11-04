@@ -123,7 +123,8 @@ function runStochasticGradientHamiltonianMonteCarloSampler(trainingInstances,
     # Rate parameter for the gamma hyperprior for each item
     sumMagnitudeItemVectors = 0.0
     for i = 1:numItems
-      sumMagnitudeItemVectors += vecnorm(itemTraitMatrix[i, :]) ^ 2
+      # sumMagnitudeItemVectors += vecnorm(itemTraitMatrix[i, :]) ^ 2
+      sumMagnitudeItemVectors += norm(itemTraitMatrix[i, :]) ^ 2
     end
     gammaRate = gammaRateHyperParam + sumMagnitudeItemVectors / 2
 
